@@ -28,7 +28,7 @@ The companion is also the same app that ships with future Nullcore products (Scu
 | Single Refit — fit the selected cloth to your body's current shape | ✓ | ✓ |
 | Align to Body — snap an FBX import to the right position | ✓ | ✓ |
 | Bake Cloth Pose — flatten a posed outfit before refitting | ✓ | ✓ |
-| **Algorithm: Better** — stronger refit with auto clipping repair, one click | — | ✓ |
+| **Algorithm: Better** — stronger refit that also cleans up cloth clipping, one click | — | ✓ |
 | **Refit All Selected** — batch a whole wardrobe in one go | — | ✓ |
 | **Match-All Shape Keys** — every body shape key gets a matching cloth-side key | — | ✓ |
 | **Weight Transfer** — copy the body's rigging weights onto store-bought outfits | — | ✓ |
@@ -37,7 +37,7 @@ The companion is also the same app that ships with future Nullcore products (Scu
 
 ### What's Algorithm: Better?
 
-Pro's headline feature. It does a face-aware refit plus inline clipping repair in a single click — catches the polygon-level clipping that a vertex-only refit can miss (chest sides, hip seams, strap areas). You can flip between **Standard** (the Free algorithm) and **Better** from the panel at any time.
+Pro's headline feature. A stronger refit that also cleans up body-poking-through-cloth as it goes — catches problem spots the Free refit can miss, like the sides of the chest, hip seams, and where straps meet skin. All in one click. You can flip between **Standard** (the Free algorithm) and **Better** from the panel at any time.
 
 ## Install
 

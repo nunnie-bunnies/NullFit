@@ -7,7 +7,7 @@ All notable changes to NullFit are tracked here. Each release on the [Releases p
 ## [0.2.0] — 2026-05-15
 
 ### Added
-- **Algorithm: Better (Pro)** — a stronger refit that combines face-aware vertex transfer with inline clipping repair, all in a single click. Catches the polygon-level clipping that a vertex-only refit misses — chest sides, hip seams, strap areas. The Single Refit and Refit All Selected buttons use Better automatically when Pro is activated.
+- **Algorithm: Better (Pro)** — a stronger refit that also cleans up body-poking-through-cloth as it goes, in a single click. Catches problem spots the Free refit can miss — sides of the chest, hip seams, where straps meet skin. The Single Refit and Refit All Selected buttons use Better automatically when Pro is activated.
 - **Algorithm toggle in the panel** — Pro users can flip between **Standard** (the Free-equivalent algorithm) and **Better** at any time. Free users see the toggle, but Better stays locked until you activate Pro.
 - **Auto Clipping Repair (Pro, standalone tool)** — fine-tune trouble spots after a refit. Pick how aggressive it should be (Fast / Balanced / Thorough), dial the strength, optionally smooth the result, and get a debug vertex group showing exactly what got flagged.
 - **Multi-Body Wardrobe (Pro)** — save body shapes as presets and run any number of outfits against any number of presets in one click. Each outfit gets one shape key per body preset, so you can toggle a preset on and watch the whole wardrobe snap to that silhouette.
