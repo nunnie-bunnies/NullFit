@@ -7,45 +7,44 @@ All notable changes to NullFit are tracked here. Each release on the [Releases p
 ## [0.2.0] — 2026-05-15
 
 ### Added
-- **Algorithm: Better (Pro)** — new face-aware refit with auto clipping repair baked into a single click. The Single Refit + Refit All Selected buttons now use this algorithm when Pro is activated. Catches polygon-level clipping that vertex-only refit misses — chest-side and underside body curves where cloth was sitting *too close* to the body or bridging across concavities.
-- **Algorithm toggle in the panel** — Pro users can switch back to Standard (Free-equivalent algorithm) at any time. Free users see the toggle but it stays locked.
-- **Auto Clipping Repair (Pro, standalone)** — manual fine-tuning tool. Three detection methods (Naive / Raycast / Winding Number), strength up to 2.0, optional smoothing, optional enforce-minimum-clearance mode, debug vertex group output showing exactly what was flagged.
-- **Multi-Body Wardrobe Batch (Pro)** — select N outfits and M saved body presets, one click generates one shape key per outfit per silhouette. Toggle a preset's shape key to switch the whole wardrobe to that body type.
-- **Plugin / companion version handshake** — plugin sends its version on every `/status` poll; companion surfaces a yellow banner when an outdated plugin is detected, with a one-click link to grab the latest from GitHub.
+- **Algorithm: Better (Pro)** — a stronger refit that combines face-aware vertex transfer with inline clipping repair, all in a single click. Catches the polygon-level clipping that a vertex-only refit misses — chest sides, hip seams, strap areas. The Single Refit and Refit All Selected buttons use Better automatically when Pro is activated.
+- **Algorithm toggle in the panel** — Pro users can flip between **Standard** (the Free-equivalent algorithm) and **Better** at any time. Free users see the toggle, but Better stays locked until you activate Pro.
+- **Auto Clipping Repair (Pro, standalone tool)** — fine-tune trouble spots after a refit. Pick how aggressive it should be (Fast / Balanced / Thorough), dial the strength, optionally smooth the result, and get a debug vertex group showing exactly what got flagged.
+- **Multi-Body Wardrobe (Pro)** — save body shapes as presets and run any number of outfits against any number of presets in one click. Each outfit gets one shape key per body preset, so you can toggle a preset on and watch the whole wardrobe snap to that silhouette.
+- **Plugin / companion version check** — the companion shows a yellow banner if your Blender plugin is out of date, with a one-click link to the latest release.
 
 ### Changed
-- **Companion v0.1.1 → v0.2.0**. New Pro endpoints: `/refit/single-better`, `/refit/multi-body`, `/refit/clipping-repair`. Each runs four to five distinct validators across the route + algorithm boundaries, in addition to the obfuscation pass.
-- Default clipping repair strength bumped from 1.0 to 1.5 — validated on test bodysuits as the value that clears typical body curvature without over-puffing tight outfits.
+- **Companion app updated to v0.2.0** — bundles the new Pro algorithms and routes.
+- **Auto Clipping Repair strength default raised from 1.0 to 1.5** — better starting value across a range of test bodysuits.
 
 ### Security
-- **Server-side version sunset / kill switch**. The companion polls the license server's `/check-version` endpoint on startup and hourly. If the server flags a build as sunset (soft) or killed (hard), the companion surfaces a banner and — in the hard-kill case — refuses to run Pro features regardless of any locally-cached license token. Lets the operator force-update old or compromised versions without waiting for token expiry. Fail-open: if the server is unreachable, normal operation continues.
+- **Remote version check.** The companion checks in with the license server on startup (and once an hour after) and surfaces a banner if your build has been flagged for retirement — useful when an old version has a known issue and we want to nudge everyone forward. If your build's been hard-retired (compromised key leak, broken release, etc.), Pro features stop running on that version until you update. If the server isn't reachable, the companion just keeps working — no offline lockout.
 
 ### Fixed
-- Plugin operators that write to vertex groups now restore Edit-mode state if you launched them mid-edit.
+- Plugin actions that touch vertex groups now leave you in the same mode they found you in, even if you triggered them mid-edit.
 
 ## [0.1.1] — 2026-05-14
 
 ### Added
-- About panel: **Watch Tutorial** button — opens the full workflow walkthrough on YouTube.
+- **Watch Tutorial** button in the About panel — opens the full workflow walkthrough on YouTube.
 - README: embedded tutorial video + 7-second quick demo.
 
 ### Changed
-- Update checker now points at this GitHub repo for release detection — every running companion will surface a banner when a newer tag is published.
+- The companion's update checker now watches this GitHub repo for new releases — every running install will surface a banner when a new tag goes up.
 
 ## [0.1.0] — 2026-05-14
 
 ### Added
 - Initial release.
-- **Free tier** — Single-mode refit: combines all active body shape keys into one "Body Match" key on the selected cloth.
-- **Pro tier** (requires Nullcore Companion + license):
-  - Batch refit — apply to every selected cloth in one click.
-  - Match-All Shape Keys — for every body shape key, create a matching cloth-side key (drivers-ready).
-  - Weight Transfer — copy the body's vertex groups onto store-bought outfits.
-- **Tools** (free):
+- **Free tier:**
+  - Single Refit — combines all active body shape keys into one "Body Match" key on the selected cloth.
   - Align to Body — one-click cloth positioning for FBX imports.
-  - Bake Cloth Pose — apply armature modifiers, for outfits with their own armature.
-- **Nullcore Companion** — fancy WPF window with system tray support, optional Windows startup, in-app license activation.
-- Auto-launch from the plugin — companion starts itself when the user clicks Refit and it isn't already running.
-- Auto-detect companion location across drives (`%LOCALAPPDATA%`, `%PROGRAMFILES%`, Downloads, Desktop, Documents) plus a "Scan" button for non-standard installs.
-- Built-in update checker — companion notifies on startup when a new release is available.
-- Honeypot endpoints for cracked-client detection.
+  - Bake Cloth Pose — apply armature modifiers, for outfits with their own rig.
+- **Pro tier** (requires Nullcore Companion + license):
+  - Refit All Selected — apply to every selected cloth in one click.
+  - Match-All Shape Keys — for every body shape key, create a matching cloth-side key.
+  - Weight Transfer — copy the body's rigging weights onto store-bought outfits.
+- **Nullcore Companion** — themed window with system-tray support, optional Windows-startup launch, in-app license activation.
+- **Auto-launch from the plugin** — the companion starts itself when you click Refit if it isn't already running.
+- **Auto-detect companion location** across common spots (Downloads, Desktop, Documents, Program Files, AppData) plus a **Scan** button for non-standard installs.
+- **Built-in update checker** — the companion notifies you on startup when a new release is out.

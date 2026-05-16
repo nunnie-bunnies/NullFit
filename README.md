@@ -17,21 +17,27 @@ https://www.youtube.com/watch?v=jdGFQduW3MQ
 
 ## How it works
 
-NullFit is a Blender plugin + **Nullcore Companion** (a small helper app). The plugin reads your avatar's body + selected clothing, sends the data to the companion, and the companion runs the refit algorithm and sends the result back. The companion auto-launches when needed — you only install it once and forget about it.
+NullFit is a Blender plugin plus a small companion app — they talk to each other in the background. The plugin reads your body + clothing, the companion runs the refit, the new shape key lands on your cloth a second or two later. The companion auto-launches when you click Refit, so you install it once and forget about it.
 
-The companion is the same app that ships with future Nullcore products (Sculptor, etc.) — install once, use everywhere.
+The companion is also the same app that ships with future Nullcore products (Sculptor, etc.) — one install, all the tools.
 
 ## Tiers
 
 | Feature | Free | Pro |
 |---|---|---|
-| Single refit (active cloth → "Body Match" shape key) | ✓ | ✓ |
-| Combines all active body shape keys in one pass | ✓ | ✓ |
-| Align cloth to body (one-click positioning helper) | ✓ | ✓ |
-| Bake cloth pose to mesh (for outfits with their own armature) | ✓ | ✓ |
-| **Batch refit** — apply to every selected cloth in one click | — | ✓ |
-| **Match-All Shape Keys** — body's shape keys drive cloth's | — | ✓ |
-| **Weight Transfer** — copy body's vertex groups to clothing | — | ✓ |
+| Single Refit — fit the selected cloth to your body's current shape | ✓ | ✓ |
+| Align to Body — snap an FBX import to the right position | ✓ | ✓ |
+| Bake Cloth Pose — flatten a posed outfit before refitting | ✓ | ✓ |
+| **Algorithm: Better** — stronger refit with auto clipping repair, one click | — | ✓ |
+| **Refit All Selected** — batch a whole wardrobe in one go | — | ✓ |
+| **Match-All Shape Keys** — every body shape key gets a matching cloth-side key | — | ✓ |
+| **Weight Transfer** — copy the body's rigging weights onto store-bought outfits | — | ✓ |
+| **Multi-Body Wardrobe** — save body presets, generate one shape key per outfit per preset | — | ✓ |
+| **Auto Clipping Repair** — standalone tool for fine-tuning trouble spots | — | ✓ |
+
+### What's Algorithm: Better?
+
+Pro's headline feature. It does a face-aware refit plus inline clipping repair in a single click — catches the polygon-level clipping that a vertex-only refit can miss (chest sides, hip seams, strap areas). You can flip between **Standard** (the Free algorithm) and **Better** from the panel at any time.
 
 ## Install
 
@@ -39,10 +45,10 @@ The companion is the same app that ships with future Nullcore products (Sculptor
    - `nullfit.py` (the Blender add-on)
    - `NullcoreCompanion-vX.Y.Z.zip` (the companion app)
 2. **Install the plugin**: in Blender, **Edit → Preferences → Add-ons → Install...** → pick `nullfit.py` → check the box to enable it.
-3. **Unzip and place `Nullcore.exe`** anywhere — the plugin auto-finds it in common locations (Downloads, Desktop, Documents, Program Files, %LOCALAPPDATA%) or you can set the path manually in the add-on preferences.
+3. **Unzip and place `Nullcore.exe`** anywhere — the plugin auto-finds it in common spots (Downloads, Desktop, Documents, Program Files). If yours lives somewhere unusual, just point at it in the add-on preferences or click **Scan**.
 4. Open the **NullFit** tab in the 3D viewport sidebar (press **N** if it's hidden).
 
-That's it for the Free tier. For Pro features (better algorithm, batch wardrobe refit, auto clipping repair): buy a license at the [Pro page](https://mixxy.gumroad.com/l/NullFit-Pro) ($7), open `Nullcore.exe`, paste your key, click Activate.
+That's it for the Free tier. For Pro features (Better algorithm, wardrobe batch, auto clipping repair, multi-body presets): buy a license at the [Pro page](https://mixxy.gumroad.com/l/NullFit-Pro) ($7), open `Nullcore.exe`, paste your key, click Activate.
 
 ## Quickstart
 
@@ -50,21 +56,21 @@ That's it for the Free tier. For Pro features (better algorithm, batch wardrobe 
 2. Set those shape keys to the values you want — the cloth will fit *that* silhouette.
 3. In Blender's NullFit panel: pick the **Body Mesh** from the dropdown.
 4. Select a clothing mesh in the viewport (right-click or click in the outliner).
-5. Click **Refit Active Cloth**. New "Body Match" shape key appears on the cloth at value 1.0.
+5. Click **Refit Active Cloth**. A new "Body Match" shape key appears on the cloth at value 1.0.
 
-Toggle the new shape key on/off to compare. That's the entire free flow.
+Toggle the new shape key on/off to compare. That's the entire free flow. Pro users get the same flow but with the Better algorithm doing the work and clipping cleanup folded in.
 
 ## Troubleshooting
 
 | Symptom | Fix |
 |---|---|
-| Refit button does nothing | Companion not running → enable Auto-launch in add-on preferences, or click Nullcore.exe manually |
-| "Companion not found" | Set the path in Edit → Preferences → Add-ons → NullFit, or click the **Scan** button to auto-locate |
-| Result looks jagged | Enable **Post-smooth** in the panel (2. Refit Parameters) |
-| Cloth doesn't move | Check Max Body Distance — raise it for loose clothing (default 0.05m is for skin-tight) |
-| Pro buttons greyed out after activating | Click the refresh ↻ icon next to "Nullcore Companion" in the panel, or just wait 5s for auto-refresh |
-| "Cloth is X meters from body's center" error | Click the **Align to Body** button in section 3 (Tools), or position the cloth manually |
-| Cloth has its own armature and looks wrong | Pose the armature to match the avatar, then click **Bake Cloth Pose** before refitting |
+| Refit button does nothing | The companion isn't running. Turn on auto-launch in the add-on preferences, or open `Nullcore.exe` once and leave it. |
+| "Companion not found" | Point at it in **Edit → Preferences → Add-ons → NullFit**, or click **Scan** to auto-locate. |
+| Result looks jagged | Turn on **Post-smooth** under Refit Parameters. |
+| Cloth doesn't move | Bump up **Max Body Distance** — the default is set for skin-tight outfits; raise it for looser clothing. |
+| Pro buttons stay greyed out after activating | Hit the ↻ refresh icon next to "Nullcore Companion" in the panel, or wait a few seconds for auto-refresh. |
+| "Cloth is X meters from body's center" | Click **Align to Body** in the Tools section, or drag the cloth into roughly the right spot manually. |
+| Cloth has its own rig and looks wrong | Pose the rig to match the avatar, then click **Bake Cloth Pose** before refitting. |
 
 ## Support
 
@@ -74,13 +80,13 @@ Toggle the new shape key on/off to compare. That's the entire free flow.
 
 ## What's NOT in this repo
 
-This is a closed-source product. The repository only hosts:
-- This README
-- Tagged release downloads (plugin + companion exe)
-- Changelog
-- Issue tracker
+NullFit is a closed-source product. This repository hosts:
 
-The source code for `Nullcore.exe` and the algorithms it runs are **not public**. The Blender plugin `nullfit.py` is a thin HTTP client — there's no algorithm code in it to fork.
+- This README and the changelog
+- Release downloads (plugin + companion exe)
+- The issue tracker
+
+The companion app and the algorithms it runs are not open-source — they're what you get when you buy Pro.
 
 ## License
 
