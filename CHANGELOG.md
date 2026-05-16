@@ -17,9 +17,6 @@ All notable changes to NullFit are tracked here. Each release on the [Releases p
 - **Companion app updated to v0.2.0** — bundles the new Pro algorithms and routes.
 - **Auto Clipping Repair strength default raised from 1.0 to 1.5** — better starting value across a range of test bodysuits.
 
-### Security
-- **Remote version check.** The companion checks in with the license server on startup (and once an hour after) and surfaces a banner if your build has been flagged for retirement — useful when an old version has a known issue and we want to nudge everyone forward. If your build's been hard-retired (compromised key leak, broken release, etc.), Pro features stop running on that version until you update. If the server isn't reachable, the companion just keeps working — no offline lockout.
-
 ### Fixed
 - Plugin actions that touch vertex groups now leave you in the same mode they found you in, even if you triggered them mid-edit.
 
