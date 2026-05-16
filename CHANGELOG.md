@@ -4,6 +4,11 @@ All notable changes to NullFit are tracked here. Each release on the [Releases p
 
 ## [Unreleased]
 
+## [0.2.1] — 2026-05-16
+
+### Changed
+- Polish + clarity pass on the plugin's panel copy, comments, and method labels. No user-visible behavior changes; existing scenes and presets all work as before.
+
 ## [0.2.0] — 2026-05-15
 
 ### Added
