@@ -4,6 +4,11 @@ All notable changes to NullFit are tracked here. Each release on the [Releases p
 
 ## [Unreleased]
 
+## [0.2.2] — 2026-05-16
+
+### Changed
+- Another sweep through the plugin's comments and docstrings — same kind of polish as v0.2.1, just deeper. No user-visible behavior changes; existing scenes and presets all carry over.
+
 ## [0.2.1] — 2026-05-16
 
 ### Changed
@@ -19,7 +24,7 @@ All notable changes to NullFit are tracked here. Each release on the [Releases p
 - **Plugin / companion version check** — the companion shows a yellow banner if your Blender plugin is out of date, with a one-click link to the latest release.
 
 ### Changed
-- **Companion app updated to v0.2.0** — bundles the new Pro algorithms and routes.
+- **Companion app updated to v0.2.0** — bundles the new Pro features.
 - **Auto Clipping Repair strength default raised from 1.0 to 1.5** — better starting value across a range of test bodysuits.
 
 ### Fixed
