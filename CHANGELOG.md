@@ -4,6 +4,40 @@ All notable changes to NullFit are tracked here. Each release on the [Releases p
 
 ## [Unreleased]
 
+## [0.4.4] — 2026-05-18
+
+Major Pro tier expansion — two new algorithms and four new refinement tools built specifically for the cases v0.2.x couldn't handle: anthro avatars, stylized proportions, dragons, and any irregular body where the standard refit produced distortion.
+
+### Added — New Pro Algorithms
+
+- **Adaptive (Pro)** — a refit option for complex avatars (anthro, stylized) where the Better algorithm isn't enough. Handles unusual shape key authoring that simpler refitters can't follow.
+- **Snap (Pro)** — last-resort fit for irregular avatars (dragons, custom proportions). Snaps the cloth directly to the body's current shape, even when other refit options can't track the body correctly.
+
+The algorithm row in the panel is now: **Standard | Better (Pro) | Adaptive (Pro) | Snap (Pro)**. The plugin's Help section explains when to use which.
+
+### Added — New Pro Refinement Tools
+
+- **Shape Key Filter** — restrict the refit to specific body regions. **Breasts Only** refits just the cup, leaves straps/band alone. **Exclude Breasts** refits everything except the chest. Custom name field for non-standard shape key names.
+- **Strength Slider** — a single 0.5–2.0 dial that scales how aggressively the algorithm pushes cloth away from the body. Replaces the old millimeter-scale settings with one user-friendly number.
+- **Preserved Faces** — Edit Mode, select faces you don't want touched, click Mark. Those vertices stay locked no matter what refit you run. Pairs with any algorithm tier.
+- **Smoothing Workshop** — standalone smoothing tool with wide-range knobs (up to 100 passes, full 0–1 blend). Run it on any cloth shape key, click multiple times to layer the effect. Pair with Preserved Faces to protect detail while smoothing everything else.
+
+### Added — Quality of Life
+
+- Smarter handling of non-uniform body shape keys (silently helps every refit, not just Pro tiers).
+- Help & Workflow section in the panel fully rewritten — covers all four algorithm tiers, troubleshooting paths for irregular avatars, and the full Pro feature list.
+- Updated discoverability hints under the algorithm row — if a refit looks off, the panel tells you which stronger algorithm to try next.
+
+### Changed
+
+- **Pro price raised from $7 to $10** for new purchases. Existing license keys keep working — no action needed if you've already bought Pro.
+- **Companion app updated to v0.4.4** — bundles the new Pro features.
+- **Plugin updated to v0.4.8** — adds the new UI sections and operators.
+
+### Notes for existing customers
+
+If you're on **NullFit 0.2.x**, your Companion will show an **Update available** banner on next launch and your old plugin will get flagged as outdated once you update. Grab the latest from Gumroad — your existing Pro license keys carry over unchanged.
+
 ## [0.2.2] — 2026-05-16
 
 ### Changed
