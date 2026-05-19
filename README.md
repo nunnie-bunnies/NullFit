@@ -36,6 +36,7 @@ The companion is the same app that ships with future Nullcore products (Sculptor
 | **Strength Slider** — dial cloth tighter or further from the body | — | ✓ |
 | **Preserved Faces** — Edit Mode select + Mark to lock regions out of refit | — | ✓ |
 | **Smoothing Workshop** — playground for cleaning up shape key results | — | ✓ |
+| **Layered Body Refit** — scales / fur / spike meshes (anthro / dragon avatars) | — | ✓ |
 | **Refit All Selected** — batch apply to every selected cloth in one click | — | ✓ |
 | **Match-All Shape Keys** — body's shape keys drive cloth's | — | ✓ |
 | **Multi-Body Wardrobe** — N outfits × M body presets in one click | — | ✓ |
