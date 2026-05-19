@@ -4,6 +4,34 @@ All notable changes to NullFit are tracked here. Each release on the [Releases p
 
 ## [Unreleased]
 
+## [0.5.0] — 2026-05-18
+
+Adds **Layered Body Refit** — a Pro feature built for avatars with a separate scales / fur / spike mesh on top of the base body. Refitting cloth against just one of the two meshes always produced a wrong result; this feature fits cloth against whichever layer is on top in each region and produces two shape keys you wire together in Unity.
+
+### Added
+
+- **Layer Mesh dropdown (Pro)** — new optional selector in Section 1 (Setup) right next to Body Mesh. Pick your scales / fur / spikes mesh and the refit fits cloth against whichever layer is on top per region.
+- **Two shape keys on the cloth (Pro, automatic when Layer Mesh is set):**
+  - **Body Match** — cloth fitted to the base body alone
+  - **Body+Layer Match** — additive offset that accounts for the scale-mesh contribution on top
+  - Wire both to the same Unity animator toggle for the combined fit; or wire only Body Match for animations where scales are hidden.
+- All three Pro algorithms (**Better / Adaptive / Snap**) support Layered Body Refit. Adaptive and Snap are recommended for the typical static-scales case; Better is most useful when you want clipping repair to also push cloth out of the scales mesh.
+
+### Changed
+
+- **Companion app updated to v0.5.0** — bundles the layered-refit support.
+- **Plugin updated to v0.5.0** — adds the Layer Mesh dropdown, two-key apply path, and updated Help & Workflow text.
+- Help & Workflow section updated with troubleshooting notes for anthro / dragon avatars.
+- Pro CTA bullet list updated to mention Layered Body Refit.
+
+### Known limitation
+
+- Shape Key Filter (Breasts Only / Exclude Breasts) is disabled when a Layer Mesh is set in this release — use one or the other for any given refit. Polish item for the next v0.5.x update.
+
+### Notes for existing customers
+
+- If you're on **NullFit 0.2.x or 0.4.x**, your Companion will show an **Update available** banner on next launch. Grab the latest from Gumroad — your existing Pro license keys carry over unchanged. **Pro price stays at $10**; lifetime updates on the v0.x line covers v0.5.
+
 ## [0.4.4] — 2026-05-18
 
 Major Pro tier expansion — two new algorithms and four new refinement tools built specifically for the cases v0.2.x couldn't handle: anthro avatars, stylized proportions, dragons, and any irregular body where the standard refit produced distortion.
@@ -79,7 +107,7 @@ If you're on **NullFit 0.2.x**, your Companion will show an **Update available**
 - Initial release.
 - **Free tier:**
   - Single Refit — combines all active body shape keys into one "Body Match" key on the selected cloth.
-  - Align to Body — one-click cloth positioning for FBX imports.
+  - Align to Body — one-click positioning helper for outfits imported as FBX that land at the world origin.
   - Bake Cloth Pose — apply armature modifiers, for outfits with their own rig.
 - **Pro tier** (requires Nullcore Companion + license):
   - Refit All Selected — apply to every selected cloth in one click.
