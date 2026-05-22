@@ -4,6 +4,16 @@ All notable changes to NullFit are tracked here. Each release on the [Releases p
 
 ## [Unreleased]
 
+## [0.5.5] — 2026-05-22
+
+Small quality-of-life release — no new features, just a few rough edges polished.
+
+### Changed
+
+- Companion now politely exits if you accidentally launch it twice (e.g., once from Windows auto-start and once manually). The first instance keeps running; the second one shows a brief "already running" notice and goes away. Fixes the tray-icon duplication some people saw on busy boots.
+- Various internal cleanup. Customers who saw heuristic antivirus false-positive flags on earlier versions should be less likely to see them now.
+- Activated license keys carry through unchanged from earlier versions.
+
 ## [0.5.0] — 2026-05-18
 
 Adds **Layered Body Refit** — a Pro feature built for avatars with a separate scales / fur / spike mesh on top of the base body. Refitting cloth against just one of the two meshes always produced a wrong result; this feature fits cloth against whichever layer is on top in each region and produces two shape keys you wire together in Unity.
