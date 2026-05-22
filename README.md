@@ -47,11 +47,11 @@ Pro is **$10** (lifetime updates on the v0.x line, two machines per license).
 
 ## Install
 
-1. **Download the latest release** from the [Releases page](../../releases/latest) — you'll need:
+1. **[Download NullFit (Free)](https://mixxy.gumroad.com/l/NullFit)** — the Gumroad page gives you two files:
    - `nullfit.py` (the Blender add-on)
-   - `Nullcore.exe` (the companion app — free download)
+   - `NullcoreCompanion-vX.Y.Z.zip` (the companion app)
 2. **Install the plugin**: in Blender, **Edit → Preferences → Add-ons → Install...** → pick `nullfit.py` → check the box to enable it.
-3. **Place `Nullcore.exe`** anywhere — the plugin auto-finds it in common locations (Downloads, Desktop, Documents, Program Files, %LOCALAPPDATA%) or you can set the path manually in the add-on preferences.
+3. **Unzip and place `Nullcore.exe`** anywhere — the plugin auto-finds it in common locations (Downloads, Desktop, Documents, Program Files, %LOCALAPPDATA%) or you can set the path manually in the add-on preferences.
 4. Open the **NullFit** tab in the 3D viewport sidebar (press **N** if it's hidden).
 
 That's it for the Free tier. For Pro: buy a license at the [Gumroad page](https://mixxy.gumroad.com/l/NullFit-Pro), open `Nullcore.exe`, paste your key, click Activate.
