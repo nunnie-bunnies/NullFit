@@ -4,6 +4,20 @@ All notable changes to NullFit are tracked here. Each release on the [Releases p
 
 ## [Unreleased]
 
+## [0.6.0] — 2026-05-24
+
+Speed-focused release for Pro users. Pro features now skip redundant work after your first refit in a session, so each subsequent Pro refit feels noticeably snappier. Foundation release for a bigger performance pass landing in v0.7.0.
+
+### Changed
+
+- Pro features reuse the result of the first license check during an active session — subsequent Pro refits no longer pay that overhead each time. Same Pro algorithms, same quality, same final result on your avatar.
+- Various internal cleanup rolled in.
+- Activated license keys carry through unchanged from earlier versions.
+
+### Coming next
+
+- **v0.7.0** is a real performance pass on the Pro algorithms themselves (Better, Adaptive, Snap, MatchAll, MultiBody). Same algorithms, same quality, same final result — just much faster getting there.
+
 ## [0.5.5] — 2026-05-22
 
 Small quality-of-life release — no new features, just a few rough edges polished.
