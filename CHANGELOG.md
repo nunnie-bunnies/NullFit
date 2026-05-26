@@ -4,6 +4,23 @@ All notable changes to NullFit are tracked here. Each release on the [Releases p
 
 ## [Unreleased]
 
+## [0.8.0] — 2026-05-26
+
+The biggest performance pass since launch. Pro refits that used to take minutes on heavy outfits now finish in seconds, with bit-identical output to v0.7.0.
+
+### Changed
+
+- **Massive Pro performance pass.** Pro algorithms (Better, Surface, Snap) got a deep optimization to the part of the pipeline that was eating most of the runtime. Bigger outfits and denser meshes feel the difference the most. Output is byte-for-byte identical to v0.7.0 — same results, dramatically less waiting.
+- **Free tier got better too.** The Free single-mode refit benefited from the same plumbing improvements as Pro — faster, cleaner, more reliable.
+- Quiet refinements under the Pro hood to how Pro post-processes its results. Nothing you'll have to think about, but the Pro experience gets a little sharper.
+- Various small reliability improvements and UI polish in the panel.
+- Updated update-check banner behavior.
+- **Pro price raised from $10 to $15** for new purchases, reflecting the consistent maintenance, performance work, and ongoing improvements that have rolled into the v0.x line. Existing license keys carry through unchanged — if you've already bought Pro at $7 or $10, you keep your key, you keep your lifetime updates, and you're already on v0.8.0 quality.
+
+### Notes for existing customers
+
+- Your Companion will show an **Update available** banner on next launch. Grab the latest from Gumroad — your existing Pro license keys carry over unchanged.
+
 ## [0.6.0] — 2026-05-24
 
 Speed-focused release for Pro users. Pro features now skip redundant work after your first refit in a session, so each subsequent Pro refit feels noticeably snappier. Foundation release for a bigger performance pass landing in v0.7.0.

@@ -43,7 +43,7 @@ The companion is the same app that ships with future Nullcore products (Sculptor
 | **Weight Transfer** — copy body's vertex groups to clothing | — | ✓ |
 | **Auto Clipping Repair** — standalone, three detection modes | — | ✓ |
 
-Pro is **$10** (lifetime updates on the v0.x line, two machines per license).
+Pro is **$15** (lifetime updates on the v0.x line, two machines per license).
 
 ## Install
 
