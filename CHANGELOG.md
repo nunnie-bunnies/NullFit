@@ -4,6 +4,20 @@ All notable changes to NullFit are tracked here. Each release on the [Releases p
 
 ## [Unreleased]
 
+## [0.9.10] — 2026-05-28
+
+Maintenance release. Various small improvements and minor polish. Feature set unchanged from v0.8.0.
+
+### Changed
+
+- Clearer messages when activation hits a temporary rate limit.
+- Various small reliability improvements throughout the app.
+- UI polish in the panel.
+
+### Notes for existing customers
+
+- Your Companion will show an **Update available** banner on next launch. Grab the latest from Gumroad — your existing Pro license keys carry over unchanged.
+
 ## [0.8.0] — 2026-05-26
 
 The biggest performance pass since launch. Pro refits that used to take minutes on heavy outfits now finish in seconds, with byte-for-byte identical output to v0.7.0.
